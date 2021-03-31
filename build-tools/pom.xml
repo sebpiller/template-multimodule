@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>ch.sebpiller.template</groupId>
+        <artifactId>template-parent</artifactId>
+        <version>${dynamicVersion}</version>
+        <relativePath>../</relativePath>
+    </parent>
+
+    <artifactId>build-tools</artifactId>
+    <name>Template - Build tools</name>
+    <description>Checkstyle config, etc.</description>
+
+    <properties>
+        <stg.site.url>file://~/maven-sites/${project.groupId}/${project.artifactId}</stg.site.url>
+    </properties>
+
+    <url>${stg.site.url}</url>
+    <distributionManagement>
+        <!-- only for site:stage to be happy -->
+        <site>
+            <id>${project.artifactId}-site</id>
+            <url>${stg.site.url}</url>
+        </site>
+    </distributionManagement>
+</project>
